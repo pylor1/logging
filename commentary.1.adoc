@@ -1,5 +1,7 @@
 # Logging Discussion Document
 
+## Preamble and introduction
+
 Logging here refers to the output of a server process that is
 
 . text in ASCII or UTF-8
@@ -44,9 +46,23 @@ As an aside and for interest only, a brief description of how the word 'log' cam
 A sailor would throw a wood log overboard near the bow of a ship and the time it took to pass a given point aft would indicate the speed of the ship through the water.
 Over time, this became a special purpose piece of wood attached to a knotted rope that would be payed out for a set time and the number of knots that were payed out indicated the speed, in knots, of the ship.
 
-The speed would be recorded in a log book and would help reckon the distance travelled.
+The speed would be recorded in a log book and would help reckon the distance travelled. Note that this kind of log book is unrelated to a book of logs, or log tables; 'log' there, coming from 'logarithm' with an entirely different etymology.
 
 ## The logging context
+Almost all server process can be user configured to create text output relating to the ongoing life of the process.
+Developers have always added some print statements to their code.
+As a developer you may be looking for information that may make your coding life easier.
+Logging is not well covered in the serious accademic literature. There is almost nothing in any of the following:
+
+* "Design Patterns"footnote:["Design Patterns: elements of reusable object-oriented software" Gamma, Erich, et al] 
+* "Structure and Interpretation of Computer Programs"footnote:["Structure and Interpretation of Computer Programs" Abelson, Harold et al]
+* "The Mythical Man-month"footnote:["The Mythical Man-month" Brooks, Frederick P. Jr]
+* "No Silver Bullet"footnote:["No Silver Bullet" Brooks, Frederick P. Jr]
+* "The Elements of Programming Style"footnote:["The Elements of Programming Style" Kernighan, Brian]
+
+And so many others about software in the large and small, and from practical or theoretical points of view. So "Where Angels Fear to Tread" many far less well qualified commentators and influencers have rushed in.
+
+
 
 
 
