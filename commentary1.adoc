@@ -1,9 +1,11 @@
 # Logging Discussion Document
 :toc:
 :tocplacement!:
-After an introductory discussion setting the scene, "what is logging?", "what _is not_ logging?", and some chat, we expand on the terms and definitions in the scope and try to form a set of parameters for defining what we want from logging and how we might go about getting it.
 toc::[]
 :numbered:
+
+After an introductory discussion setting the scene, "what is logging?", "what _is not_ logging?", and some chat, we expand on the terms and definitions in the scope and try to form a set of parameters for defining what we want from logging and how we might go about getting it.
+
 ## Preamble and Introduction
 
 ### Ambit
