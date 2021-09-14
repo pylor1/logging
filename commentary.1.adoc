@@ -1,19 +1,22 @@
 # Logging Discussion Document
 
-## Preamble and introduction
+After an introductory discussion setting the scene, what is logging, what is -not- logging, and some chat, we expand on the terms and definitions in the scope and try to form a set of parameters for defining what we want from logging and how we might go about getting it.
+
+## Preamble and Introduction
 
 ### Ambit
 Logging here refers to the output of a server process that is
 
-. text in ASCII or UTF-8
+. the output of an
+.. identifiable,
+.. discretionary,
+.. developer added,
+.. source code call to some function,
+.. with the intention of creating a durable record of an event or state
 . output to a streaming service such as a file system, network, or DBMS
 . not part of the UI
 . not covered by a requirement in a specification
-. the output of an
-.. identifiable,
-.. discretionary, developer added,
-.. source code call to some function,
-.. with the intention of creating a durable record of an event or state
+. text in ASCII or UTF-8
 
 ### Logging Disambiguation
 Developers and others use the word 'logging' in many ways, most of which are both vague and ambiguous. Before offering help on logging choices it is as well to reduce the vagueness and ambiguity.
@@ -70,6 +73,9 @@ Much of the advice is hopeless or actually harmful.
 ### Purpose of this document
 I hope that this document provides a quick, curated, entry point to help developers select, build, and configure, their logging solution so that it works for them and those they work with.
 It is not intended to be a specification for the design of libraries and services to meet all needs without the developer having to think for themselves. There are other sources of that 'information' - good luck.
+
+## Expanding on the Ambit
+What follows is an explanation of the restrictions shown in the Ambit section above. Some restrictions may raise eyebrows but I hope I can convince you that they are mostly useful.
 
 
 
