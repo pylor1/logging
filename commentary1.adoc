@@ -120,7 +120,9 @@ Typically the code writing a log message will inherit some log stream from a con
 Calls to external services such as contacting an MTA via IMAP would not constitute logging.
 
 ### not part of the UI
-Flashing screens and beeps are not logging. 
+Flashing screens and beeps are not logging.
+
+Client processes can log too but these days, for better or worse, UI means a browser and client logging should not be visible to the user.
 
 ### not covered by a requirement in a specification
 ### text in ASCII or UTF-8
@@ -140,5 +142,7 @@ You cannot know, in advance, what exceptional error situation will occur and wha
 In short, if you knew what was going to go wrong you would do something to prevent it.
 
 
+#### Some silly advice
+Logs must be namespaced and have an assigned severity level (e.g. trace, debug, info, warn, error, fatal).
 
 
