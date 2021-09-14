@@ -2,6 +2,7 @@
 
 ## Preamble and introduction
 
+### Ambit
 Logging here refers to the output of a server process that is
 
 . text in ASCII or UTF-8
@@ -19,7 +20,7 @@ Developers and others use the word 'logging' in many ways, most of which are bot
 With that in mind, this section discusses what is, and what is not, meant here by 'logging'.
 There is also a small note on the origin of the term.
 
-
+### Exclusions
 Logs of the following kind are not part of this discussion:
 
 . Database Logs (transaction logs)
@@ -28,7 +29,7 @@ Logs of the following kind are not part of this discussion:
 . Critical information for System Operators or Administrators (exceptions and failures)
 
 
-#### Best Practice?
+### Best Practice?
 Not wishing to hide behind thought-stopping clich&#233;s we shall not discuss 'best practice' beyond refusing to entertain the idea and providing a word or two on why.
 
 For there to exist any 'best practice' there must be:
@@ -40,7 +41,7 @@ For there to exist any 'best practice' there must be:
 . proof or at least substantial evidence that the 'best practice' has been assessed by the agreed metric and found to be superior to all other practices
 
 
-#### Etymology
+### Etymology
 As an aside and for interest only, a brief description of how the word 'log' came to be so confused.
 
 A sailor would throw a wood log overboard near the bow of a ship and the time it took to pass a given point aft would indicate the speed of the ship through the water.
@@ -48,7 +49,7 @@ Over time, this became a special purpose piece of wood attached to a knotted rop
 
 The speed would be recorded in a log book and would help reckon the distance travelled. Note that this kind of log book is unrelated to a book of logs, or log tables; 'log' there, coming from 'logarithm' with an entirely different etymology.
 
-## The logging context
+### The logging context
 Almost all server process can be user configured to create text output relating to the ongoing life of the process.
 Developers have always added some print statements to their code.
 As a developer you may be looking for information that may make your coding life easier.
@@ -66,7 +67,7 @@ There are "N best practices for logging", "Logging Patterns", and of course "Log
 
 Much of the advice is hopeless or actually harmful. 
 
-## Purpose of this document
+### Purpose of this document
 I hope that this document provides a quick, curated, entry point to help developers select, build, and configure, their logging solution so that it works for them and those they work with.
 It is not intended to be a specification for the design of libraries and services to meet all needs without the developer having to think for themselves. There are other sources of that 'information' - good luck.
 
