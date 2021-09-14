@@ -66,10 +66,10 @@ The speed would be recorded in a log book and would help reckon the distance tra
 
 
 ### The logging context
-Almost all server process can be user configured to create text output relating to the ongoing life of the process.
-Developers have always added some print statements to their code.
-As a developer you may be looking for information that may make your coding life easier.
-However, logging is not well covered, if at all, in the serious accademic literature. There is almost nothing in any of the following:
+Almost all server process _can_ be user configured to create text output relating to the ongoing life of the process in such a way that it does not alter the function of the process.
+Developers of user applications have always added some print statements to their code for their own benefit, for example to help diagnose a problem or to help understand how to make a change.
+So as a developer you may be looking for information about logging that may make your coding life easier.
+However, logging is not well covered, if at all, in the serious accademic literature. For example, there is almost nothing in any of the following:
 
 * "Design Patterns"footnote:["Design Patterns: elements of reusable object-oriented software" Gamma, Erich, et al] 
 * "Structure and Interpretation of Computer Programs"footnote:["Structure and Interpretation of Computer Programs" Abelson, Harold et al]
@@ -77,7 +77,7 @@ However, logging is not well covered, if at all, in the serious accademic litera
 * "No Silver Bullet"footnote:["No Silver Bullet" Brooks, Frederick P. Jr]
 * "The Elements of Programming Style"footnote:["The Elements of Programming Style" Kernighan, Brian]
 
-And so many others about software in the large and small, and from practical or theoretical points of view. So "Where Angels Fear to Tread" many far less well qualified commentators and influencers have rushed in.
+This small list in this respect is representative of so many written about software in the large or small, and from practical or theoretical points of view. So "Where Angels Fear to Tread" many far less well qualified commentators and influencers have rushed in.
 
 There are "N best practices for logging", "Logging Patterns", and of course "Logging Anti-Patterns", "Patterns for Micro-Services Enterprise Logging", and so on. 
 
