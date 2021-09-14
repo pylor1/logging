@@ -2,21 +2,19 @@
 
 Logging here refers to the output of a server process that is
 
-. Text in ASCII or UTF-8
+. text in ASCII or UTF-8
 . output to a streaming service such as a file system, network, or DBMS
 . not part of the UI
 . not covered by a requirement in a specification
-. the output of
-.. an identifiable
-.. discretionary
-.. call in the source code
-.. by a developer
-.. to some function
+. the output of an
+.. identifiable,
+.. discretionary, developer added,
+.. source code call to some function,
 .. with the intention of creating a durable record of an event or state
 
-## Logging Disambiguation
-Developers and others use the word 'logging' in many ways, most of which are both vague and ambiguous.
-This section discusses what is, and what is not, meant here by 'logging'.
+### Logging Disambiguation
+Developers and others use the word 'logging' in many ways, most of which are both vague and ambiguous. Before offering help on logging choices it is as well to reduce the vagueness and ambiguity.
+With that in mind, this section discusses what is, and what is not, meant here by 'logging'.
 There is also a small note on the origin of the term.
 
 
@@ -28,7 +26,7 @@ Logs of the following kind are not part of this discussion:
 . Critical information for System Operators or Administrators (exceptions and failures)
 
 
-# Best Practice?
+#### Best Practice?
 Not wishing to hide behind thought-stopping clich&#233;s we shall not discuss 'best practice' beyond refusing to entertain the idea and providing a word or two on why.
 
 For there to exist any 'best practice' there must be:
@@ -40,15 +38,15 @@ For there to exist any 'best practice' there must be:
 . proof or at least substantial evidence that the 'best practice' has been assessed by the agreed metric and found to be superior to all other practices
 
 
-# Etymology
-As an aside and for interest only, an brief description of how the word 'log' came to be so confused.
+#### Etymology
+As an aside and for interest only, a brief description of how the word 'log' came to be so confused.
 
-A wood log would be thrown over the side, near the bow, of a ship and the time it took to pass a point aft, would indicate the speed of the ship through the water.
-This became a special purpose piece of wood attached to a knotted rope that would be payed out for a set time and the number of knots that were payed out indicated the speed, in knots, of the ship.
+A sailor would throw a wood log overboard near the bow of a ship and the time it took to pass a given point aft would indicate the speed of the ship through the water.
+Over time, this became a special purpose piece of wood attached to a knotted rope that would be payed out for a set time and the number of knots that were payed out indicated the speed, in knots, of the ship.
 
 The speed would be recorded in a log book and would help reckon the distance travelled.
 
-
+## The logging context
 
 
 
