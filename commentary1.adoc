@@ -1,18 +1,18 @@
-# Logging Discussion Document
+= Logging Discussion Document
 :toc:
 :tocplacement!:
 toc::[]
-:numbered:
+
+:sectnums:
+:sectnumlevels: 4
 
 After an introductory discussion setting the scene, "what logging _is_", "what logging _is not_", and some chat, we expand on the terms and definitions in the scope and try to form a set of parameters for defining what we want from logging and how we might go about getting it.
 
-## Preamble and Introduction
+== Preamble and Introduction
 
-### Ambit
+=== Ambit
 Logging here refers to the output of a server process that is
 
-
-[arabic]
 
 . the output of an
 .. identifiable,
@@ -27,12 +27,12 @@ Logging here refers to the output of a server process that is
 
 
 
-### Logging Disambiguation
+=== Logging Disambiguation
 Programmers and others use the word 'logging' in many ways, most of which are both vague and ambiguous. Before offering help on logging choices it is as well to reduce the vagueness and ambiguity.
 With that in mind, this section discusses what is, and what is not, meant here by 'logging'.
 There is also a small note on the origin of the term.
 
-### Exclusions
+=== Exclusions
 Logs of the following kind are not part of this discussion:
 
 . Database Logs (transaction logs)
@@ -41,7 +41,7 @@ Logs of the following kind are not part of this discussion:
 . Critical information for System Operators or Administrators (exceptions and failures)
 
 
-### Best Practice?
+=== Best Practice?
 Not wishing to hide behind thought-stopping clich&#233;s we shall not discuss 'best practice' beyond refusing to entertain the idea and providing a word or two on why.
 
 For there to exist any 'best practice' there must be:
@@ -54,20 +54,20 @@ For there to exist any 'best practice' there must be:
 
 
 
-### Etymology
+=== Etymology
 .Etymology
 [%collapsible]
-=====
+====
 As an aside and for interest only, a brief description of how the word 'log' came to be so confused.
 
 A sailor would throw a wood log overboard near the bow of a ship and the time it took to pass a given point aft would indicate the speed of the ship through the water.
 Over time, this became a special purpose piece of wood attached to a knotted rope that would be payed out for a set time and the number of knots that were payed out indicated the speed, in knots, of the ship.
 
 The speed would be recorded in a log book and would help reckon the distance travelled. Note that this kind of log book is unrelated to a book of logs, or log tables; 'log' there, coming from 'logarithm' with an entirely different etymology.
-=====
+====
 
 
-### The logging context
+=== The logging context
 Almost all server process _can_ be user configured to create text output relating to the ongoing life of the process in such a way that it does not alter the function of the process.
 Programmers of user applications have always added some print statements to their code for their own benefit, for example to help diagnose a problem or to help understand how to make a change.
 So as a programmer you may be looking for information about logging that may make your coding life easier.
@@ -85,64 +85,65 @@ There are "N best practices for logging", "Logging Patterns", and of course "Log
 
 Much of the advice is hopeless or actually harmful. 
 
-### Purpose of this document
+=== Purpose of this document
 I hope that this document provides a quick, curated, entry point to help programmers select, build, and configure, their logging solution so that it works for them and those they work with.
 It is not intended to be a specification for the design of libraries and services to meet all needs without the programmer having to think for themselves. There are other sources of that 'information' - good luck.
 
-## Expanding the preamble
+== Expanding the preamble
 
-#### The Ambit
+=== The Ambit
 What follows is an explanation of the restrictions shown in the Ambit section above. Some restrictions may raise eyebrows but I hope I can convince you that they are mostly useful.
 
 
-#### identifiable
+==== identifiable
 It is desireable to be able to match some information in a log stream with a single place in the source code responsible for the output. The log statement should be part of the source code and not automatically added by an instrumentation process as part of the tool chain.
 Like assertions, log statements tell developers something about the code. They form an important part of the implementation but not part of the design.
 
-#### discretionary
+==== discretionary
 The programmer chooses where to place log statements. Like comments, each log statement in the code should carry its weight. Whether the log statement actually produces output each time the line is reached is also discretionary and can be controlled by environmental, compile time, or run time conditions.
 
-#### programmer added
+==== programmer added
 It is up to the programmer to add log statements. This might seem obvious but there are many languages and tools that offer tracing facilities to monitor, either transiently, or durably, the execution path of a program. Such log output is not considered here.
 
-#### source code call to some function
+==== source code call to some function
 It is the job of source code and not the byte code, or P code, interpreter to generate log output. It is also to be expected that a user defined function be called and not a language feature.
 
-#### with the intention of creating a durable record of an event or state
+==== with the intention of creating a durable record of an event or state
 Programmer intention is perhaps the most important aspect to logging. Some benefit to the programmer must have been forseen by adding a line of code that is not necessary to meet functional requirements. I am not refering here to 'shotgun' logging.
 
 The record could simply show that a certain line in the code had been executed and such would constitute an event. This may be sufficient but often a breakpoint would have achieved the same effect with an attended execution of the process. For unattended running, it is more likely that some execution state be revealed.
 
-#### output to a streaming service such as a file system, network, or DBMS
+==== output to a streaming service such as a file system, network, or DBMS
 Log output should be durable so that it can be reviewed in the light of some surprise non-conformance event.
 Typically the code writing a log message will inherit some log stream from a containing program or framework and 
 
 Calls to external services such as contacting an MTA via IMAP would not constitute logging.
 
-#### not part of the UI
+==== not part of the UI
 Flashing screens and beeps are not logging.
 
 Client processes can log too but these days, for better or worse, UI means a browser and client logging should not be visible to the user.
 
-#### not covered by a requirement in a specification
-#### text in ASCII or UTF-8
+==== not covered by a requirement in a specification
+
+==== text in ASCII or UTF-8
 
 
-## Development Context
+== Development Context
 Although some programmers may have only to consider their own code, most will be working in a heterogeneous environment. If you have constraints over some or all technical choices, you may still have scope to choose how you use those libraries and subsystems.
 
 You will most likely be writing code for a system that has applications running on operating systems from more than one vendor, in more than one language, and libraries from more than source including open source and multiple commercial vendors.
 
 
 
-### Development Problem
+=== Development Problem
 Usually, a solution is proposed to solve a problem and is assessed against that problem. 
 However, for Logging it seems that even a na&iuml;ve problem description is awkward. 
 You cannot know, in advance, what exceptional error situation will occur and what state and path data you would like to have at your disposal to assist with your problem resolution. 
 In short, if you knew what was going to go wrong you would do something to prevent it.
 
 
-#### Some silly advice
+=== Some silly advice
 Logs must be namespaced and have an assigned severity level (e.g. trace, debug, info, warn, error, fatal).
 
 
