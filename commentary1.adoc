@@ -91,41 +91,41 @@ It is not intended to be a specification for the design of libraries and service
 
 ## Expanding the preamble
 
-### The Ambit
+#### The Ambit
 What follows is an explanation of the restrictions shown in the Ambit section above. Some restrictions may raise eyebrows but I hope I can convince you that they are mostly useful.
 
 
-### identifiable
+#### identifiable
 It is desireable to be able to match some information in a log stream with a single place in the source code responsible for the output. The log statement should be part of the source code and not automatically added by an instrumentation process as part of the tool chain.
 Like assertions, log statements tell developers something about the code. They form an important part of the implementation but not part of the design.
 
-### discretionary
+#### discretionary
 The programmer chooses where to place log statements. Like comments, each log statement in the code should carry its weight. Whether the log statement actually produces output each time the line is reached is also discretionary and can be controlled by environmental, compile time, or run time conditions.
 
-### programmer added
+#### programmer added
 It is up to the programmer to add log statements. This might seem obvious but there are many languages and tools that offer tracing facilities to monitor, either transiently, or durably, the execution path of a program. Such log output is not considered here.
 
-### source code call to some function
+#### source code call to some function
 It is the job of source code and not the byte code, or P code, interpreter to generate log output. It is also to be expected that a user defined function be called and not a language feature.
 
-### with the intention of creating a durable record of an event or state
+#### with the intention of creating a durable record of an event or state
 Programmer intention is perhaps the most important aspect to logging. Some benefit to the programmer must have been forseen by adding a line of code that is not necessary to meet functional requirements. I am not refering here to 'shotgun' logging.
 
 The record could simply show that a certain line in the code had been executed and such would constitute an event. This may be sufficient but often a breakpoint would have achieved the same effect with an attended execution of the process. For unattended running, it is more likely that some execution state be revealed.
 
-### output to a streaming service such as a file system, network, or DBMS
+#### output to a streaming service such as a file system, network, or DBMS
 Log output should be durable so that it can be reviewed in the light of some surprise non-conformance event.
 Typically the code writing a log message will inherit some log stream from a containing program or framework and 
 
 Calls to external services such as contacting an MTA via IMAP would not constitute logging.
 
-### not part of the UI
+#### not part of the UI
 Flashing screens and beeps are not logging.
 
 Client processes can log too but these days, for better or worse, UI means a browser and client logging should not be visible to the user.
 
-### not covered by a requirement in a specification
-### text in ASCII or UTF-8
+#### not covered by a requirement in a specification
+#### text in ASCII or UTF-8
 
 
 ## Development Context
