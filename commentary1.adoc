@@ -1,4 +1,6 @@
 # Logging Discussion Document
+:numbered:
+:toc:
 
 After an introductory discussion setting the scene, "what is logging?", "what _is not_ logging?", and some chat, we expand on the terms and definitions in the scope and try to form a set of parameters for defining what we want from logging and how we might go about getting it.
 
@@ -7,7 +9,9 @@ After an introductory discussion setting the scene, "what is logging?", "what _i
 ### Ambit
 Logging here refers to the output of a server process that is
 
+
 [arabic]
+
 . the output of an
 .. identifiable,
 .. discretionary,
@@ -18,6 +22,8 @@ Logging here refers to the output of a server process that is
 . not part of the UI
 . not covered by a requirement in a specification
 . text in ASCII or UTF-8
+
+
 
 ### Logging Disambiguation
 Developers and others use the word 'logging' in many ways, most of which are both vague and ambiguous. Before offering help on logging choices it is as well to reduce the vagueness and ambiguity.
