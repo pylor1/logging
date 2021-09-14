@@ -52,7 +52,7 @@ The speed would be recorded in a log book and would help reckon the distance tra
 Almost all server process can be user configured to create text output relating to the ongoing life of the process.
 Developers have always added some print statements to their code.
 As a developer you may be looking for information that may make your coding life easier.
-Logging is not well covered in the serious accademic literature. There is almost nothing in any of the following:
+However, logging is not well covered, if at all, in the serious accademic literature. There is almost nothing in any of the following:
 
 * "Design Patterns"footnote:["Design Patterns: elements of reusable object-oriented software" Gamma, Erich, et al] 
 * "Structure and Interpretation of Computer Programs"footnote:["Structure and Interpretation of Computer Programs" Abelson, Harold et al]
@@ -62,8 +62,9 @@ Logging is not well covered in the serious accademic literature. There is almost
 
 And so many others about software in the large and small, and from practical or theoretical points of view. So "Where Angels Fear to Tread" many far less well qualified commentators and influencers have rushed in.
 
+There are "N best practices for logging", "Logging Patterns", and of course "Logging Anti-Patterns", "Patterns for Micro-Services Enterprise Logging", and so on. 
 
-
+Much of the advice is hopeless or actually harmful. 
 
 
 
