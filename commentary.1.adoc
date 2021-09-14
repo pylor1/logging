@@ -66,5 +66,9 @@ There are "N best practices for logging", "Logging Patterns", and of course "Log
 
 Much of the advice is hopeless or actually harmful. 
 
+## Purpose of this document
+I hope that this document provides a quick, curated, entry point to help developers select, build, and configure, their logging solution so that it works for them and those they work with.
+It is not intended to be a specification for the design of libraries and services to meet all needs without the developer having to think for themselves. There are other sources of that information - good luck.
+
 
 
