@@ -2,12 +2,20 @@
 
 Logging here refers to the output of a server process that is
 
-* Text in ASCII or UTF-8
-* not part of the UI
-* not covered by a requirement in a specification
-* the output of a discretionary call by a developer to some funtion with the intention of creating a durable record of an event or state
+. Text in ASCII or UTF-8
+. not part of the UI
+. not covered by a requirement in a specification
+. the output of a discretionary call by a developer to some funtion with the intention of creating a durable record of an event or state
 
 ## Logging Disambiguation
 Developers and others use the word 'logging' in many ways, most of which are both vague and ambiguous.
 This section discusses what is, and what is not, meant here by 'logging'.
 There is also a small note on the origin of the term.
+
+
+Logs of the following kind are not part of this discussion:
+
+. Database Logs
+. Access Control Logs
+. Functional Logs such as telemetry data, weather, bore hole, and so on
+. Critical information for System Operators or Administrators
