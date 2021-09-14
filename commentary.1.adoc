@@ -1,5 +1,11 @@
 # Logging Discussion Document
 
+Logging here refers to the output of a server process that is
+
+* Text in ASCII or UTF-8
+* not part of the UI
+* not covered by a requirement in a specification
+
 ## Logging Disambiguation
 Developers and others use the word 'logging' in many ways, most of which are both vague and ambiguous.
 This section discusses what is, and what is not, meant here by 'logging'.
