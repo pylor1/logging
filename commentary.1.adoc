@@ -1,0 +1,6 @@
+# Logging Discussion Document
+
+## Logging Disambiguation
+Developers and others use the word 'logging' in many ways, most of which are both vague and ambiguous.
+This section discusses what is, and what is not, meant here by 'logging'.
+There is also a small note on the origin of the term.
