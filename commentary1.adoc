@@ -1,4 +1,4 @@
-= Logging Discussion Document
+= Logging Discussion Document =
 :toc:
 :tocplacement!:
 toc::[]
@@ -13,7 +13,12 @@ There is a circular dependency between what we mean by the term 'logging' and wh
 
 Put very simply, 'logging' is the use of print statements by a programmer for the benefit of the programmer.
 
-=== Ambit
+=== Audience ===
+This is for 3GL and 4GL programmers writing server side business software. Languages such as C, C++, C#, Java, Go, Python, Rust. 
+
+Safety or time critical applications are not within scope
+
+=== Ambit ===
 Logging here refers to the output of a server process that is
 
 
@@ -105,31 +110,41 @@ Like assertions, log statements tell developers something about the code. They f
 ==== discretionary
 The programmer chooses where to place log statements. Like comments, each log statement in the code should carry its weight. Whether the log statement actually produces output each time the line is reached is also discretionary and can be controlled by environmental, compile time, or run time conditions.
 
+Postmortem dumps are not considered logs.
+
 ==== programmer added
 It is up to the programmer to add log statements. This might seem obvious but there are many languages and tools that offer tracing facilities to monitor, either transiently, or durably, the execution path of a program. Such log output is not considered here.
 
-==== source code call to some function
+==== source code call to some function ====
 It is the job of source code and not the byte code, or P code, interpreter to generate log output. It is also to be expected that a user defined function be called and not a language feature.
+
+Stack traces exist in a middle ground here. When created by function call they are within the letter of these restrictions but are not within its spirit.
 
 ==== with the intention of creating a durable record of an event or state
 Programmer intention is perhaps the most important aspect to logging. Some benefit to the programmer must have been forseen by adding a line of code that is not necessary to meet functional requirements. I am not refering here to 'shotgun' logging.
 
 The record could simply show that a certain line in the code had been executed and such would constitute an event. This may be sufficient but often a breakpoint would have achieved the same effect with an attended execution of the process. For unattended running, it is more likely that some execution state be revealed.
 
-==== output to a streaming service such as a file system, network, or DBMS
+==== output to a streaming service such as a file system, network, or DBMS ====
 Log output should be durable so that it can be reviewed in the light of some surprise non-conformance event.
 Typically the code writing a log message will inherit some log stream from a containing program or framework and 
 
 Calls to external services such as contacting an MTA via IMAP would not constitute logging.
 
-==== not part of the UI
+==== not part of the UI ====
 Flashing screens and beeps are not logging.
 
 Client processes can log too but these days, for better or worse, UI means a browser and client logging should not be visible to the user.
 
-==== not covered by a requirement in a specification
+==== not covered by a requirement in a specification ====
+Output required to conform to a requirement is clearly not discretionary. It would properly be regarded as normal output of the program and as essential as the UI and any other form of output specified in the requirements.
 
-==== text in ASCII or UTF-8
+==== text in ASCII or UTF-8 ====
+This may seem arbitrary or over restrictive but the two situations where a programmer would wish to use the log output, the only reason to have any at all, are ones where limited viewing and searching facilities are to be expected.
+
+Special purpose log viewers are not a welcome requirement when under pressure to mend broken software in a production environment.
+
+Many very well known and understood text processing tools exist and are readily available on development and production servers. ASCII is the life blood of Unix and line oriented files are practically de rigueur.
 
 
 == Development Context
