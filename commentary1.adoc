@@ -9,7 +9,7 @@ toc::[]
 After an introductory discussion setting the scene, "what logging _is_", "what logging _is not_", and some chat, we expand on the terms and definitions in the scope and try to form a set of parameters for defining what we want from logging and how we might go about getting it.
 
 == Preamble and Introduction
-There is a circular dependency between what we mean by logging and what problem logging is intended to solve. I propose restricting the meaning of the term in the context of this document and to attempt to tie the two together in a coherent and useful way.
+There is a circular dependency between what we mean by the term 'logging' and what problem logging is intended to solve. I propose restricting the meaning of the term in the context of this document and to attempt to tie the two together in a coherent and useful way.
 
 Put very simply, 'logging' is the use of print statements by a programmer for the benefit of the programmer.
 
