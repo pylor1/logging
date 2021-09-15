@@ -34,6 +34,8 @@ Logging here refers to the output of a server process that is
 . text in ASCII or UTF-8
 
 
+Log files are expected to be used by a programmer or a system operator either during development of software or a surprise non-conformance issue (a crash or other failure).
+
 
 === Logging Disambiguation
 Programmers and others use the word 'logging' in many ways, most of which are both vague and ambiguous. Before offering help on logging choices it is as well to reduce the vagueness and ambiguity.
