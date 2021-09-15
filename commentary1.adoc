@@ -14,7 +14,7 @@ There is a circular dependency between what we mean by the term 'logging' and wh
 Put very simply, 'logging' is the use of print statements by a programmer for the benefit of the programmer.
 
 === Audience ===
-This is for 3GL and 4GL programmers writing server side business software. Languages such as C, C++, C#, Java, Go, Python, Rust. 
+This is for 3GL and 4GL programmers writing server side business software; languages such as C, C++, C#, Java, Go, Python, Rust. 
 
 Safety or time critical applications are not within scope
 
