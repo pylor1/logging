@@ -52,7 +52,7 @@ For there to exist any 'best practice' there must be:
 . specific, explicit requirements that must be met
 . proof, or at least substantial evidence that the above requirements match the requirements at hand
 . an enumeration of all practices that could apply
-. an agreed, non-contentious, metric, that can and has provided an order relation on all practices
+. an agreed, non-contentious, metric, that demonstrably provides an order relation on all practices
 . proof or at least substantial evidence that the 'best practice' has been assessed by the agreed metric and found to be superior to all other practices
 
 
