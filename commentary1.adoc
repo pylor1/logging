@@ -194,4 +194,9 @@ Logs must be namespaced and have an assigned severity level (e.g. trace, debug, 
 === Worries ===
 How can one be sure that a call to log a message does not cause a side effect? If it gets stripped out of pdn code, there will be a change in behaviour.
 
+=== Simple idea ===
+write log messages to a file in text format with timestamp, source, attribute, value rows tab separated.
+rotate logs files.
+read log files with separate process and load logs into database then delete file
+
 
