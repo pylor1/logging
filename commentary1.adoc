@@ -36,6 +36,16 @@ Logging here refers to the output of a server process that is
 
 Log files are expected to be used by a programmer or a system operator either during development of software or a surprise non-conformance issue (a crash or other failure).
 
+Some authors claim that:
+
+A log message is what a computer system, device, software, etc. generates in response to some sort of stimuli.
+
+That is not what is meant here. Two necessary conditions are not met by this definition:
+
+. The message is generated on behalf of a programmer.
+. The message is intended to be seen by a programmer.
+
+In short, it is communication between two people - a message in a bottle rather than a response to a stimulus.
 
 === Logging Disambiguation
 Programmers and others use the word 'logging' in many ways, most of which are both vague and ambiguous. Before offering help on logging choices it is as well to reduce the vagueness and ambiguity.
