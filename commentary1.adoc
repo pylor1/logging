@@ -141,7 +141,15 @@ Stack traces exist in a middle ground here. When created by function call they a
 ==== with the intention of creating a durable record of an event or state
 Programmer intention is perhaps the most important aspect to logging. Some benefit to the programmer must have been forseen by adding a line of code that is not necessary to meet functional requirements. I am not refering here to 'shotgun' logging.
 
+This raises a few of the most important questions about logs.
+
 The record could simply show that a certain line in the code had been executed and such would constitute an event. This may be sufficient but often a breakpoint would have achieved the same effect with an attended execution of the process. For unattended running, it is more likely that some execution state be revealed.
+
+
+. Who is going to read or consult them?
+. Under what conditions are they going to be read?
+. What tools will be required to make use of the logs?
+
 
 ==== output to a streaming service such as a file system, network, or DBMS ====
 Log output should be durable so that it can be reviewed in the light of some surprise non-conformance event.
