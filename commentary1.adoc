@@ -60,6 +60,7 @@ Logs of the following kind are not part of this discussion:
 . Audit trails, such as web server logs (overlapping with access control)
 . Functional Logs such as telemetry data, weather, bore hole, and so on (borehole logs)
 . Critical information for System Operators or Administrators (exceptions and failures)
+. Metrics such as timings, number of users, number of queries, and so on.
 
 The first is just a confusion caused by the same name being used in the same area for two entirely different things.
 
