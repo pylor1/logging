@@ -57,9 +57,15 @@ Logs of the following kind are not part of this discussion:
 
 . Database Logs (transaction logs)
 . Access Control Logs (logins)
+. Audit trails, such as web server logs (overlapping with access control)
 . Functional Logs such as telemetry data, weather, bore hole, and so on (borehole logs)
 . Critical information for System Operators or Administrators (exceptions and failures)
 
+The first is just a confusion caused by the same name being used in the same area for two entirely different things.
+
+It is not suggested that any of the above exclusions are unimportant, simply that they will not be covered here.
+
+There is little or no discretion for the programmer to exercise in these cases; they are likely to be defined in the software requirement specification.
 
 === Best Practice?
 Not wishing to hide behind thought-stopping clich&#233;s we shall not discuss 'best practice' beyond refusing to entertain the idea and providing a word or two on why.
