@@ -165,21 +165,24 @@ Special purpose log viewers are not a welcome requirement when under pressure to
 Many very well known and understood text processing tools exist and are readily available on development and production servers. ASCII is the life blood of Unix and line oriented files are practically de rigueur.
 
 
-== Development Context
+== Development Context ==
 Although some programmers may have only to consider their own code, most will be working in a heterogeneous environment. If you have constraints over some or all technical choices, you may still have scope to choose how you use those libraries and subsystems.
 
 You will most likely be writing code for a system that has applications running on operating systems from more than one vendor, in more than one language, and libraries from more than source including open source and multiple commercial vendors.
 
 
 
-=== Development Problem
+=== Development Problem ===
 Usually, a solution is proposed to solve a problem and is assessed against that problem. 
 However, for Logging it seems that even a na&iuml;ve problem description is awkward. 
 You cannot know, in advance, what exceptional error situation will occur and what state and path data you would like to have at your disposal to assist with your problem resolution. 
 In short, if you knew what was going to go wrong you would do something to prevent it.
 
 
-=== Some silly advice
+=== Some silly advice ===
 Logs must be namespaced and have an assigned severity level (e.g. trace, debug, info, warn, error, fatal).
+
+=== Worries ===
+How can one be sure that a call to log a message does not cause a side effect? If it gets stripped out of pdn code, there will be a change in behaviour.
 
 
